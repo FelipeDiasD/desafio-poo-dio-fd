@@ -5,33 +5,25 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-        Curso curso1 = new Curso();
-        curso1.setTitulo("Java Basico");
-        curso1.setDescricao("Curso de Java Basico");
-        curso1.setCargaHoraria(2);
+        Curso curso1 = new Curso("Java Basico","Curso de Java Basico", 2);
 
-        Curso curso2 = new Curso();
-        curso2.setTitulo("POO");
-        curso2.setDescricao("Curso de POO");
-        curso2.setCargaHoraria(5);
+        Curso curso2 = new Curso("POO", "Curso de POO", 5);
 
-        Mentoria mentoria = new Mentoria();
-        mentoria.setTitulo("Carreira em Java");
-        mentoria.setDescricao("Mentoria de carreira como especialista em Java");
-        mentoria.setData(LocalDate.now());
+        Mentoria mentoria = new Mentoria(
+                "Carreira em Java",
+                "Mentoria de carreira como especialista em Java",
+                LocalDate.now()
+        );
 
-
-
-
-        Bootcamp bootcamp = new Bootcamp();
-        bootcamp.setNome("Bootcamp Java Developer");
-        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        Bootcamp bootcamp = new Bootcamp(
+                "Bootcamp Java Developer",
+                "Descrição Bootcamp Java Developer"
+        );
         bootcamp.getConteudos().add(curso1);
         bootcamp.getConteudos().add(curso2);
 
 
-        Dev dev1 = new Dev();
-        dev1.setNome("Jorge");
+        Dev dev1 = new Dev("Jorge");
         dev1.inscreveBootcamp(bootcamp);
         System.out.println("Conteúdos inscritos" + dev1.getConteudosInscritos());
         dev1.progredir();
@@ -40,8 +32,7 @@ public class Main {
 
         System.out.println("==================================");
 
-        Dev dev2 = new Dev();
-        dev2.setNome("Mauro");
+        Dev dev2 = new Dev("Mauro");
         dev2.inscreveBootcamp(bootcamp);
         System.out.println("Conteúdos inscritos" + dev2.getConteudosInscritos());
         dev2.progredir();
